@@ -1,11 +1,12 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import {NestedProps} from "./NestedProps";
 import {ContextExample} from "./ContextExample";
 import {UseStateCounter} from "./UseState";
 import {UseReducerExample} from "./UseReducer";
 import {ContextAndHookExample} from "./ContextAndHooks";
 import {UseEffectMount} from "./UseEffect/useEffectMount";
+import {UseMemoExample} from "./UseMemo";
 import "./style.scss";
 
 export const App = () => {
@@ -32,6 +33,9 @@ export const App = () => {
                         <li>
                             <Link to="/useEffectMount">useEffect - LifeCycle methods</Link>
                         </li>
+                        <li>
+                            <Link to="/useMemo">useMemo - Performance bump</Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -53,6 +57,9 @@ export const App = () => {
                     </Route>
                     <Route path="/useEffectMount">
                         <UseEffectMount/>
+                    </Route>
+                    <Route path="/useMemo">
+                        <UseMemoExample/>
                     </Route>
                     <Route path="/">
                         <Home/>
